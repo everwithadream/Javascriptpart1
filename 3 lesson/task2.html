@@ -1,0 +1,42 @@
+<script>
+  var items = [
+    {
+      title: "Футболка",
+      price: 5,
+      quantity: 4,
+    },
+    {
+      title: "Кофта",
+      price: 10,
+      quantity: 3,
+    },
+    {
+      title: "Куртка",
+      price: 20,
+      quantity: 1,
+    },
+    {
+      title: "Штаны",
+      price: 15,
+      quantity: 2,
+    },
+  ];
+  var sum = 0;
+  for (var item of items) {
+    document.write(
+      item.title + " стоит =" + item.price * item.quantity + "$" + "<br>"
+    );
+    sum += item.price * item.quantity;
+  }
+  document.write("Общая стоимость товаров = " + sum + "$");
+  function countBasketPrice(m) {
+    var i = 0;
+    var s = 0;
+    while (i <= m.length - 1) {
+      s += m[i].price * m[i].quantity;
+      i++;
+    }
+    return s;
+  }
+  alert("Общая стоимость товаров=" + countBasketPrice(items) + "$");
+</script>

@@ -1,0 +1,22 @@
+<script>
+    function mathOperation(arg1, arg2, operation){
+    switch (operation) {
+        case "+":
+        var s = arg1 + arg2;
+        return(s);
+        case "-":
+        var s = arg1 - arg2;
+        return(s);
+        case "*":
+        var s = arg1 * arg2;
+        return(s);
+        case "/":
+        var s = arg1 / arg2;
+        return(s);
+    }
+}
+    var a = +prompt("Введите первый аргумент");
+    var b = +prompt("Введите второй аргумент");
+    var c = prompt("Введите знак операции");
+    alert(mathOperation(a,b,c));
+</script>

@@ -1,0 +1,15 @@
+<script>
+  var n = 2; // 1 не является простым числом, хоть и удовлетворяет условиям простого числа.
+  while (n < 100) {
+    var s = 1;
+    var c = 2;
+    while (c <= Math.round(n / 2)) {
+      s *= n % c;
+      c++;
+    }
+    if (s != 0) {
+      document.write(n + " ");
+    }
+    n++;
+  }
+</script>
