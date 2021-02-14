@@ -1,0 +1,29 @@
+<script>
+  function ptp(m) {
+    if (m > 99) {
+      var point = {
+        единицы: String(m)[2],
+        десятки: String(m)[1],
+        сотни: String(m)[0],
+      };
+    } else if (m < 99 && m > 9) {
+      var point = {
+        единицы: String(m)[1],
+        десятки: String(m)[0],
+      };
+    } else {
+      var point = {
+        единицы: String(m)[0],
+      };
+    }
+    return point;
+  }
+  var a = +prompt("Введите a в диапазоне от 0 до 999 включительно.");
+  if (a < 0 || a > 999) {
+    console.log(
+      "Ошибка!\nчисло должно входить в диапазон от 0 до 999 включительно"
+    );
+  } else {
+    console.log(ptp(a));
+  }
+</script>

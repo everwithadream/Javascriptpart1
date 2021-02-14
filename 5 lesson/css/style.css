@@ -1,0 +1,88 @@
+.maintable {
+  border: 2px solid red;
+  margin: 50px;
+}
+
+.maintable-box {
+  box-sizing: border-box;
+  min-width: 80px;
+  height: 80px;
+}
+
+.maintable-black {
+  background-color: rgb(253, 202, 136);
+  cursor: pointer;
+}
+
+.maintable-white {
+  background-color: rgb(255, 236, 211);
+  cursor: pointer;
+}
+
+.maintable-toptext {
+  transform: rotate(180deg);
+  min-width: 80px;
+  height: 80px;
+  text-align: center;
+  border-bottom: 2px solid black;
+  background-color: rgb(255, 236, 211);
+}
+
+.maintable-righttext {
+  transform: rotate(180deg);
+  min-width: 80px;
+  height: 80px;
+  text-align: center;
+  border-left: 2px solid black;
+  background-color: rgb(255, 236, 211);
+}
+
+.maintable-lefttext {
+  min-width: 80px;
+  height: 80px;
+  text-align: center;
+  border-right: 2px solid black;
+  background-color: rgb(255, 236, 211);
+}
+
+.maintable-bottext {
+  min-width: 80px;
+  height: 80px;
+  text-align: center;
+  border-top: 2px solid black;
+  background-color: rgb(255, 236, 211);
+}
+
+.maintable-box-blacktext {
+  display: none;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  font: 3em Arial, sans-serif;
+  text-shadow: white 0 0 2px;
+}
+
+.maintable-box:hover .maintable-box-blacktext {
+  display: block;
+}
+
+.maintable-box-whitetext {
+  display: none;
+  font: 3em Arial, sans-serif;
+  text-shadow: black 0 0 2px;
+  color: rgb(255, 255, 255);
+  text-align: center;
+}
+
+.maintable-box:hover .maintable-box-whitetext {
+  display: block;
+}
+
+.maintable-box-fig {
+  display: block;
+  text-align: center;
+  font-size: 3em;
+}
+
+.maintable-box:hover .maintable-box-fig {
+  display: none;
+}
