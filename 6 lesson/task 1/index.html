@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Gallery</title>
+  </head>
+  <body>
+    <div class="container">
+      <img src="img/1s.jpg" alt="photo" class="image" />
+      <img src="img/2s.jpg" alt="photo" class="image" />
+      <img src="img/3s.jpg" alt="photo" class="image" />
+      <img src="#" alt="" class="big-image" />
+    </div>
+    <script>
+      function f(change) {
+        document
+          .getElementsByClassName("big-image")[0]
+          .setAttribute("onerror", "errorf()");
+        document
+          .getElementsByClassName("big-image")[0]
+          .setAttribute("alt", "Big Picture");
+        switch (change.target) {
+          case images[0]:
+            document
+              .getElementsByClassName("big-image")[0]
+              .setAttribute("src", "img/1l.jpg");
+            break;
+          case images[1]:
+            document
+              .getElementsByClassName("big-image")[0]
+              .setAttribute("src", "img/2l.jpg");
+            break;
+          case images[2]:
+            document
+              .getElementsByClassName("big-image")[0]
+              .setAttribute("src", "img/3l.jpg");
+            break;
+        }
+      }
+      function errorf() {
+        alert("Большое фото отсутствует");
+      }
+      var images = document.getElementsByClassName("image");
+      for (var item of images) {
+        item.onclick = f;
+      }
+    </script>
+  </body>
+</html>
