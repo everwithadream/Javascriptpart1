@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Шахматы</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+    <div class="content"></div>
+    </div>
+    <script>
+        var abc = ["A", "B", "C", "D", "E", "F", "G", "H"];
+        var nm = ["Л", "Кн", "С", "Ф", "Кр", "С","Кн","Л"];
+        var wfig = ["&#9817;","&#9814;","&#9816;","&#9815;","&#9813;","&#9812;","&#9815;","&#9816;","&#9814;"];
+        var bfig = ["&#9823;","&#9820;","&#9822;","&#9821;","&#9819;","&#9818;","&#9821;","&#9822;","&#9820;"];
+        var k = 8;
+        var l = 8;
+        var table = document.createElement('table');
+        table.className = "maintable";
+        var tr,td,i,j;
+        for (i = 0;i < 10;i++) {
+		tr = document.createElement("tr");
+		table.append(tr);
+		for(j=0;j < 10;j++){
+			td = document.createElement("td");
+			tr.append(td);
+            if ((i == 0 && j > 0) && (i == 0 && j < 9)) { //Цикл для разметки таблицы и окраски
+                td.innerText = abc[j-1];
+                td.className = "maintable-toptext";
+            }
+            else if ((i > 0 && j == 9) && (i < 9 && j == 9)) {
+                td.innerText = k;
+                k -= 1;
+                td.className = "maintable-righttext";
+            }
+            else if ((i > 0 && j == 0) && (i < 9 && j == 0)) {
+                td.innerText = l;
+                l-= 1;
+                td.className = "maintable-lefttext";
+            }
+            else if ((i == 9 && j > 0) && (i == 9 && j < 9)) {
+                td.innerText = abc[j-1];
+                td.className = "maintable-bottext";
+            }
+            else if ((i == 0 && j == 9) || (i ==9 && j == 0)) {
+                td.className = "maintable-white maintable-box";
+            }
+            else if ((i % 2 == 0 && j % 2 !=0) || (i % 2 != 0 && j % 2 == 0)) {
+                td.className = "maintable-black maintable-box";
+            }
+            else {
+                td.className = "maintable-white maintable-box";
+            }
+            if ((i == 2) && (j > 0) && (j < 9)) { //Цикл для расстановки фигур и имен фигур
+                var naming = document.createElement("div");
+                naming.innerText = "П";
+                naming.className = "maintable-box-blacktext";
+                td.append(naming);
+                var figure = document.createElement("div");
+                figure.innerHTML = bfig[0];
+                figure.className = "maintable-box-fig";
+                td.append(figure);
+            }
+            else if ((i == 7) && (j > 0) && (j < 9)) {
+                var naming = document.createElement("div");
+                naming.innerText = "П";
+                naming.className = "maintable-box-whitetext";
+                td.append(naming);
+                var figure = document.createElement("div");
+                figure.innerHTML = wfig[0];
+                figure.className = "maintable-box-fig";
+                td.append(figure);
+            }
+            else if ((i == 1) && (j > 0) && (j < 9)) {
+                var naming = document.createElement("div");
+                naming.innerText = nm[j-1];
+                naming.className = "maintable-box-blacktext";
+                td.append(naming);
+                var figure = document.createElement("div");
+                figure.innerHTML = bfig[j];
+                figure.className = "maintable-box-fig";
+                td.append(figure);
+            }
+            else if ((i == 8) && (j > 0) && (j < 9)) {
+                var naming = document.createElement("div");
+                naming.innerText = nm[j-1];;
+                naming.className = "maintable-box-whitetext";
+                td.append(naming);
+                var figure = document.createElement("div");
+                figure.innerHTML = wfig[j];
+                figure.className = "maintable-box-fig";
+                td.append(figure);
+            }
+		}
+	}
+    document.getElementsByClassName("content")[0].append(table);
+    </script>
+</body>
+</html>
